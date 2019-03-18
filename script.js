@@ -1,4 +1,5 @@
 
+/* Array de colores */
 var numSquares = 6;
 var color = [];
 var pickedColor ;
@@ -13,8 +14,12 @@ var modes = document.querySelectorAll(".mode")
 init();
 
 function init(){
-  
-   /*  Asignar los colores a los cuadrados y verificar si se clickea el correcto o no  */
+  setupSquares();
+  setupMode();
+  reset();
+ }
+ 
+function setupSquares(){
   for(var i=0; i<squares.length; i++){
     squares[i].addEventListener("click",function(){
       var clickedColor = (this.style.background);
@@ -31,10 +36,7 @@ function init(){
       }
     })
   }
-  setupMode();
-  reset();
- }
- 
+}
 /* Botones de dificultad */
 function setupMode(){
   
